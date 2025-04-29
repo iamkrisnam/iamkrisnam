@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAMKRISNAM</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    nav a {
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      border-top: 1px solid #fff3;
+    }
+    .hamburger {
+      font-size: 28px;
+      cursor: pointer;
+      display: block;
+    }
+    .buttons {
+      margin: 30px;
+    }
+    button {
+      background: white;
+      color: #0072ff;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @media (min-width: 600px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        background: none;
+      }
+      .hamburger {
+        display: none;
+      }
+      nav a {
+        border: none;
+        margin: 0 10px;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("menu");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">IAMKRISNAM</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+  <nav id="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="buttons">
+    <button onclick="alert('Sign In clicked')">Sign In</button>
+    <button onclick="alert('Sign Up clicked')">Sign Up</button>
+  </div>
+
+</body></html>
