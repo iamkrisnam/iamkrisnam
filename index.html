@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IAMKRISNAM</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    nav a {
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      border-top: 1px solid #fff3;
+    }
+    .hamburger {
+      font-size: 28px;
+      cursor: pointer;
+      display: block;
+    }
+    @media (min-width: 600px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        background: none;
+      }
+      .hamburger {
+        display: none;
+      }
+      nav a {
+        border: none;
+        margin: 0 10px;
+      }
+    }
+    .content {
+      margin-top: 100px;
+    }
+    .social img {
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp img {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("menu");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">IAMKRISNAM</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="#">About Us</a>
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+  </nav>
+
+  <div class="content">
+    <h1>Welcome<br>Myself Krishna</h1>
+  </div>
+
+  <div class="social">
+    <a href="https://www.instagram.com/iamkrisnam?igsh=MXg2MTI0dXAycjQ5cw==" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+  </div>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/918318065614" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    </a>
+  </div>
+</body>
+</html>
