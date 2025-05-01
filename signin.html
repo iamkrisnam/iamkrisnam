@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAlw8jJWE_e4IrwPbz6kGeoUxmx2WgGapU",
+      authDomain: "iamkrisnam-eceb8.firebaseapp.com",
+      projectId: "iamkrisnam-eceb8",
+      storageBucket: "iamkrisnam-eceb8.firebasestorage.app",
+      messagingSenderId: "150374107303",
+      appId: "1:150374107303:web:243413229ff12a42eb7382",
+      measurementId: "G-JBT2Y8NFM4"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    function signIn() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("Login successful!");
+          window.location.href = "home.html";
+        })
+        .catch(error => alert("Error: " + error.message));
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 260px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Sign In</h2>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="signIn()">Login</button>
+</body>
+</html>
