@@ -23,6 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
     .logo-container {
       display: flex;
@@ -51,6 +52,15 @@
       font-size: 28px;
       cursor: pointer;
       display: block;
+      position: absolute;
+      right: 20px;
+    }
+    .dark-toggle {
+      position: absolute;
+      right: 60px;
+      top: 20px;
+      cursor: pointer;
+      font-size: 20px;
     }
     @media (min-width: 600px) {
       nav {
@@ -69,14 +79,16 @@
     .content {
       margin-top: 80px;
     }
-    .social img, .whatsapp img {
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a img {
       width: 40px;
       height: 40px;
+      margin: 0 10px;
     }
     .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+      display: inline;
     }
     #loader {
       position: fixed;
@@ -90,11 +102,15 @@
       font-size: 30px;
       z-index: 9999;
     }
-    .testimonial {
-      background: rgba(255, 255, 255, 0.1);
+    .thought {
+      background: rgba(255, 255, 255, 0.15);
       margin: 20px;
       padding: 15px;
       border-radius: 10px;
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fffc;
     }
     form input, form textarea {
       padding: 10px;
@@ -104,12 +120,14 @@
       border: none;
       border-radius: 5px;
     }
-    .dark-toggle {
-      position: absolute;
-      right: 20px;
-      top: 20px;
+    form button {
+      padding: 10px 20px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
       cursor: pointer;
-      font-size: 20px;
     }
   </style>
 </head>
@@ -120,8 +138,8 @@
       <img src="logo.png" alt="Logo">
       <div class="logo-text">IAMKRISNAM</div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="dark-toggle" onclick="toggleDark()">🌓</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
   <nav id="menu">
     <a href="#">Home</a>
@@ -130,24 +148,23 @@
     <a href="signup.html">Sign Up</a>
   </nav>  <div class="content">
     <h1 id="greet">Welcome<br>Myself Krishna</h1>
-    <h3 id="clock"></h3><h2>Testimonials</h2>
-<div class="testimonial">“This website is really inspiring!” - Aman</div>
-<div class="testimonial">“Simple and powerful design.” - Priya</div>
+    <h3 id="clock"></h3><h2>Motivational Thoughts</h2>
+<div class="thought">“Mistakes are proof that you are trying..”</div>
+<div class="thought">“Be a warrior, not a worrier..”</div>
 
 <h2>Contact Me</h2>
 <form onsubmit="alert('Message Sent!'); return false;">
   <input type="text" placeholder="Your Name" required><br>
   <input type="email" placeholder="Your Email" required><br>
   <textarea placeholder="Your Message" rows="4" required></textarea><br>
-  <button type="submit">Send</button>
+  <button type="submit">Send Message</button>
 </form>
 
-  </div>  <div class="social">
+  </div>  <div class="social-icons">
     <a href="https://www.instagram.com/iamkrisnam?igsh=MXg2MTI0dXAycjQ5cw==" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
     </a>
-  </div>  <div class="whatsapp">
-    <a href="https://wa.me/918318065614" target="_blank">
+    <a class="whatsapp" href="https://wa.me/918318065614" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
   </div>  <script>
@@ -173,5 +190,5 @@
       updateGreeting();
       setInterval(updateClock, 1000);
     }
- </script></body>
-</html>
+  </script></body>
+    </html>
